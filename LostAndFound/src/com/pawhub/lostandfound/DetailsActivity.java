@@ -420,14 +420,14 @@ public class DetailsActivity extends FragmentActivity {
 					.icon(BitmapDescriptorFactory.fromResource(R.drawable.pointer)));
 		}
 
-	}
-	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		MapFragment f = (MapFragment) getFragmentManager()
-				.findFragmentById(R.id.detailReportMap);
-		if (f != null)
-			getFragmentManager().beginTransaction().remove(f).commit();
+		@Override
+		public void onDestroyView() {
+			super.onDestroy();
+			SupportMapFragment f = (SupportMapFragment) getFragmentManager()
+					.findFragmentById(R.id.detailReportMap);
+			if (f != null)
+				getFragmentManager().beginTransaction().remove(f).commit();
+		}
 	}
 
 }

@@ -9,7 +9,7 @@
         android:id="@+id/optsDialogSimilary"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/bottom_border_dark_gray"
+        android:background="@drawable/border_bottom_dark_gray"
         android:orientation="horizontal" >
 
         <TextView
@@ -27,7 +27,7 @@
         android:id="@+id/optsDialogInadequate"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/bottom_border_dark_gray"
+        android:background="@drawable/border_bottom_dark_gray"
         android:orientation="horizontal" >
 
         <TextView
