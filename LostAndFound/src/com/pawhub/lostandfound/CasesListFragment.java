@@ -3,6 +3,7 @@ package com.pawhub.lostandfound;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.pawhub.lostandfound.data.DataCache;
 import com.pawhub.lostandfound.data.DataSourceDumy;
 import com.pawhub.lostandfound.data.ReportsList;
 
@@ -47,8 +48,9 @@ public class CasesListFragment extends Fragment{
         parentLayout=(LinearLayout)getView().findViewById(R.id.layoutCasesList);
         inflater = (LayoutInflater) getActivity().getSystemService( Context.LAYOUT_INFLATER_SERVICE );
         
-        DataSourceDumy dummy=new DataSourceDumy();
-        reportList=new ReportsList(dummy.getData(), inflater);
+      //DataSourceDumy dummy=new DataSourceDumy();
+      //reportList=new ReportsList(dummy.getData(), inflater);
+      reportList=new ReportsList(DataCache.getCache(), inflater);
         
         Bundle arguments=getArguments();
         initScreen(arguments);

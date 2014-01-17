@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 import com.pawhub.lostandfound.constants.Constants;
+import com.pawhub.lostandfound.data.DataCache;
 import com.pawhub.lostandfound.preferences.ConfigData;
 import com.pawhub.lostandfound.services.AllReportsWebService;
 import com.pawhub.lostandfound.services.ReportsByIdWebService;
@@ -71,6 +72,9 @@ public class SplashScreen extends Activity {
 	private class AsyncTaskSplash extends AsyncTask<Void, Void, Void> {
 		@Override
 		protected Void doInBackground(Void... params) {
+			
+			 AllReportsWebService handler = new AllReportsWebService();
+             DataCache.saveCache(handler.getReports());
 			
 			try {
 				if (Constants.isDebug())
